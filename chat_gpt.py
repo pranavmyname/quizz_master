@@ -5,7 +5,7 @@ from openai import OpenAI
 
 app = Flask(__name__)
 client = OpenAI()
-
+app.secret_key = 'secret_key'
 
 SCORES_FILE = 'scores.json'
 
