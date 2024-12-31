@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Quiz</title>
+    <style>
+        #score-display {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trivia Quiz</h1>
+    <p>Welcome, {{ username }}! <a href="/logout">Logout</a></p>
+    <form id="question-form">
+        <label for="genre">Select Genre:</label>
+        <select id="genre" name="genre">
+            <option value="science">Science</option>
+            <option value="history">History</option>
+            <option value="sports">Sports</option>
+            <option value="Cricket">Cricket</option>
+            <option value="Indian politics">Indian politics</option>
+            <option value="Geography">Geography</option>
+            <option value="Pop Culture">Pop Culture</option>
+            <option value="Bollywood">Bollywood</option>
+            <!-- Add more genres as needed -->
+        </select>
+        <button type="button" onclick="getQuestion()">Get Question</button>
+    </form>
+    <div id="question-container" style="display:none;">
+        <p id="question"></p>
+        <form id="answer-form">
+            <label for="answer">Your Answer:</label>
+            <input type="text" id="answer" name="answer">
+            <button type="button" onclick="submitAnswer()">Submit Answer</button>
+        </form>
+        <p id="evaluation"></p>
+        <button id="next-question" style="display:none;" onclick="getNextQuestion()">Next Question</button>
+    </div>
+    <div id="score-display">
+        Score: <span id="correct-score">0</span> / <span id="total-score">0</span>
+    </div>
+    <script>
+        async function getQuestion() {
+            const genre = document.getElementById('genre').value;
+            const response = await fetch('/get-question', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ genre })
+            });
+            const data = await response.json();
+            if (data.question) {
+                document.getElementById('question').innerText = data.question;
+                document.getElementById('question-container').style.display = 'block';
+                document.getElementById('answer').value = '';
+                document.getElementById('evaluation').innerText = '';
+                document.getElementById('next-question').style.display = 'none';
+            } else {
+                alert(data.error);
+            }
+        }
+
+        async function submitAnswer() {
+            const question = document.getElementById('question').innerText;
+            const answer = document.getElementById('answer').value;
+            const response = await fetch('/submit-answer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question, answer })
+            });
+            const data = await response.json();
+            if (data.evaluation) {
+                document.getElementById('evaluation').innerText = data.evaluation;
+                document.getElementById('next-question').style.display = 'block';
+                // Update score after answer submission
+                updateScore();
+            } else {
+                alert(data.error);
+            }
+        }
+
+        async function updateScore() {
+            const response = await fetch('/score');
+            const data = await response.json();
+            if (!data.error) {
+                document.getElementById('correct-score').innerText = data.correct;
+                document.getElementById('total-score').innerText = data.total;
+            }
+        }
+
+        // Update score when page loads
+        updateScore();
+
+        function getNextQuestion() {
+            getQuestion();
+        }
+    </script>
+</body>
+</html>
