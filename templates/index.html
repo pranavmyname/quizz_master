@@ -14,6 +14,116 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
+        /* Fireworks animation for PASS */
+        .firework {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px;
+            animation: explode 1s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: scale(20); opacity: 0; }
+        }
+
+        .pass-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: gold;
+            font-size: 5rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px gold, 0 0 20px orange, 0 0 30px yellow;
+            z-index: 100;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { transform: translate(-50%, -50%) scale(1); }
+            to { transform: translate(-50%, -50%) scale(1.2); }
+        }
+
+        /* Cartoon Farting smoke animation for FAIL */
+        .smoke-cloud {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #8d6e63;
+            filter: blur(3px);
+            z-index: 90;
+            opacity: 0;
+            animation: puff-up 2.5s ease-out forwards;
+        }
+
+        .smoke-bubble {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #5d4037;
+            z-index: 80;
+            opacity: 0;
+            animation: float-up 3s ease-out forwards;
+        }
+
+        @keyframes puff-up {
+            0% { transform: scale(0.2); opacity: 0; }
+            10% { opacity: 0.9; }
+            50% { opacity: 0.8; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+            10% { opacity: 0.9; }
+            25% { transform: translateY(-30px) translateX(15px) scale(1.5); opacity: 0.8; }
+            50% { transform: translateY(-60px) translateX(-10px) scale(2); opacity: 0.7; }
+            75% { transform: translateY(-90px) translateX(5px) scale(2.5); opacity: 0.4; }
+            100% { transform: translateY(-120px) translateX(-5px) scale(3); opacity: 0; }
+        }
+
+        .cartoon-poop {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            z-index: 100;
+            animation: bounce 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes bounce {
+            from { transform: translateX(-50%) scale(1) rotate(-5deg); }
+            to { transform: translateX(-50%) scale(1.1) rotate(5deg); }
+        }
+
+        .fail-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff0000;
+            font-size: 5rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            z-index: 100;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(-51%, -50%); }
+            25% { transform: translate(-49%, -51%); }
+            50% { transform: translate(-51%, -49%); }
+            75% { transform: translate(-50%, -51%); }
+            100% { transform: translate(-51%, -50%); }
+        }
     </style>
 </head>
 <body>
@@ -47,6 +157,7 @@
     <div id="score-display">
         Score: <span id="correct-score">0</span> / <span id="total-score">0</span>
     </div>
+    <div id="animation-container"></div>
     <script>
         async function getQuestion() {
             const genre = document.getElementById('genre').value;
@@ -83,7 +194,8 @@
             if (data.evaluation) {
                 document.getElementById('evaluation').innerText = data.evaluation;
                 document.getElementById('next-question').style.display = 'block';
-                // Update score after answer submission
+                // Trigger animations based on evaluation
+                triggerAnimation(data.evaluation);
                 updateScore();
             } else {
                 alert(data.error);
@@ -103,7 +215,190 @@
         updateScore();
 
         function getNextQuestion() {
+            // Clear any animations before getting next question
+            clearAnimations();
             getQuestion();
+        }
+
+        function clearAnimations() {
+            const animationContainer = document.getElementById('animation-container');
+            animationContainer.innerHTML = '';
+        }
+
+        function triggerAnimation(evaluation) {
+            clearAnimations();
+            const animationContainer = document.getElementById('animation-container');
+
+            if (evaluation.includes('PASS')) {
+                // Create PASS message
+                const passMessage = document.createElement('div');
+                passMessage.className = 'pass-message';
+                passMessage.innerText = 'PASS!';
+                animationContainer.appendChild(passMessage);
+                
+                // Create multiple fireworks
+                for (let i = 0; i < 20; i++) {
+                    setTimeout(() => {
+                        createFirework(animationContainer);
+                    }, i * 200);
+                }
+
+                // Remove animations after 5 seconds
+                setTimeout(() => {
+                    clearAnimations();
+                }, 6000);
+            } else if (evaluation.includes('FAIL')) {
+                // Create WRONG message
+                const failMessage = document.createElement('div');
+                failMessage.className = 'fail-message';
+                failMessage.innerText = 'WRONG!';
+                animationContainer.appendChild(failMessage);
+                
+                // Create cartoon poop emoji
+                const poop = document.createElement('div');
+                poop.className = 'cartoon-poop';
+                poop.innerHTML = '💩';
+                animationContainer.appendChild(poop);
+                
+                // Create cartoon farting smoke
+                createCartoonFartingSmoke(animationContainer);
+                
+                // Remove animations after 5 seconds
+                setTimeout(() => {
+                    clearAnimations();
+                }, 6000);
+            }
+        }
+
+        function createFirework(container) {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            
+            // Random position
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            
+            // Random color
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            firework.style.left = `${x}px`;
+            firework.style.top = `${y}px`;
+            firework.style.backgroundColor = color;
+            
+            container.appendChild(firework);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                firework.remove();
+            }, 1000);
+        }
+
+        function createCartoonFartingSmoke(container) {
+            // Create cartoon-style farting smoke with clouds and bubbles
+            
+            // Create the central origin point for the fart
+            const originX = window.innerWidth / 2;
+            const originY = window.innerHeight - 70;
+            
+            // Brown-green colors for smoke
+            const cloudColors = ['#8d6e63', '#795548', '#6d4c41', '#a1887f', '#5d4037'];
+            const bubbleColors = ['#4e342e', '#5d4037', '#6d4c41', '#3e2723'];
+            
+            // Create main smoke clouds
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const cloud = document.createElement('div');
+                    cloud.className = 'smoke-cloud';
+                    
+                    // Position clouds in a cone pattern
+                    const angle = (Math.random() * 60 - 30) * (Math.PI / 180);
+                    const distance = 20 + Math.random() * 40;
+                    const x = originX + Math.cos(angle) * distance;
+                    const y = originY - Math.sin(angle) * distance;
+                    
+                    const color = cloudColors[Math.floor(Math.random() * cloudColors.length)];
+                    
+                    cloud.style.left = `${x}px`;
+                    cloud.style.top = `${y}px`;
+                    cloud.style.backgroundColor = color;
+                    
+                    // Random size variations
+                    const size = 20 + Math.random() * 30;
+                    cloud.style.width = `${size}px`;
+                    cloud.style.height = `${size}px`;
+                    
+                    // Random opacity and timing variations
+                    cloud.style.animationDuration = `${2 + Math.random() * 1.5}s`;
+                    
+                    container.appendChild(cloud);
+                    
+                    // Remove after animation completes
+                    setTimeout(() => {
+                        cloud.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+            
+            // Create smaller bubble particles
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const bubble = document.createElement('div');
+                    bubble.className = 'smoke-bubble';
+                    
+                    // Position bubbles in a wider cone pattern
+                    const angle = (Math.random() * 120 - 60) * (Math.PI / 180);
+                    const distance = 30 + Math.random() * 60;
+                    const x = originX + Math.cos(angle) * distance;
+                    const y = originY - Math.sin(angle) * distance;
+                    
+                    const color = bubbleColors[Math.floor(Math.random() * bubbleColors.length)];
+                    
+                    bubble.style.left = `${x}px`;
+                    bubble.style.top = `${y}px`;
+                    bubble.style.backgroundColor = color;
+                    
+                    // Random size variations for bubbles
+                    const size = 5 + Math.random() * 15;
+                    bubble.style.width = `${size}px`;
+                    bubble.style.height = `${size}px`;
+                    
+                    // Random timing variations
+                    bubble.style.animationDuration = `${2.5 + Math.random() * 2}s`;
+                    
+                    container.appendChild(bubble);
+                    
+                    // Remove after animation completes
+                    setTimeout(() => {
+                        bubble.remove();
+                    }, 4000);
+                }, i * 80 + 300); // Slight delay for bubbles to follow main clouds
+            }
+            
+            // Add vibration effect to the poop emoji
+            const poopEmoji = document.querySelector('.cartoon-poop');
+            if (poopEmoji) {
+                // Create "wave" lines above poop for smell
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        const smellLine = document.createElement('div');
+                        smellLine.style.position = 'fixed';
+                        smellLine.style.bottom = `${90 + i * 20}px`;
+                        smellLine.style.left = '50%';
+                        smellLine.style.transform = 'translateX(-50%)';
+                        smellLine.style.fontSize = '24px';
+                        smellLine.style.zIndex = '101';
+                        smellLine.style.opacity = '0';
+                        smellLine.innerHTML = '〰️';
+                        smellLine.style.animation = 'float-up 2s ease-out forwards';
+                        container.appendChild(smellLine);
+                        
+                        setTimeout(() => {
+                            smellLine.remove();
+                        }, 2000);
+                    }, i * 700);
+                }
+            }
         }
     </script>
 </body>
