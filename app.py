@@ -49,6 +49,12 @@ def index():
 def login():
     if request.method == 'POST':
         username = request.form['username']
+        token = request.form.get('token', '')
+        
+        # Verify the magic token
+        if token != "324Skjssdj$$$//sd":
+            return render_template('login.html', error="Invalid magic token. Access denied.")
+            
         session['username'] = username
         return redirect(url_for('index'))
     return render_template('login.html')
@@ -110,4 +116,4 @@ def score():
     return jsonify({'error': 'User not logged in'}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port = 5001)

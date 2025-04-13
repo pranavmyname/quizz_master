@@ -35,6 +35,9 @@
             padding: 0.75rem 1rem;
             border-radius: 5px;
         }
+        .alert {
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -43,10 +46,20 @@
         <div class="card">
             <div class="card-body p-5">
                 <h2 class="card-title text-center mb-4">Login</h2>
+                {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
                 <form action="/login" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username" name="username" required autofocus>
+                    </div>
+                    <div class="mb-3">
+                        <label for="token" class="form-label">Magic Token</label>
+                        <input type="password" class="form-control" id="token" name="token" required>
+                        <small class="form-text text-muted">Enter the magic token to access the app</small>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Start Quizzing</button>
                 </form>
