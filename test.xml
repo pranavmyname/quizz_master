@@ -1,4 +1,0 @@
-<Response>
-<Say voice="woman">This is a test message from god</Say>
-<Play>http://demo.twilio.com/docs/classic.mp3</Play>
-</Response>
