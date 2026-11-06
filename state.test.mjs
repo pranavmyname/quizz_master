@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {validateBoard,sanitizeProgress,completed} from './dist/state.js';
+const board=JSON.parse(fs.readFileSync(new URL('./dist/quiz.json',import.meta.url)));
+test('50 unique questions in two complete boards with assets',()=>{validateBoard(board);assert.equal(board.rounds.length,2);let n=0;for(const r of board.rounds){assert.equal(r.categories.length,5);for(const c of r.categories){assert.deepEqual(c.questions.map(q=>q.points),[10,20,30,40,50]);for(const q of c.questions){n++;assert.ok(fs.existsSync(new URL('./dist/'+q.questionImage,import.meta.url)));assert.ok(fs.existsSync(new URL('./dist/'+q.answerImage,import.meta.url)));}}}assert.equal(n,50);});
+test('progress survives serialization; ignores unknown and invalid IDs',()=>{const s=completed({board,done:{}},'ep19-1',true);const saved=JSON.parse(JSON.stringify(s));assert.deepEqual(sanitizeProgress(board,{...saved.done,'bad':true,'ep19-2':'true'}),{'ep19-1':true});assert.equal(completed(s,'ep19-1',false).done['ep19-1'],false);});
+test('rejects duplicate questions, unsafe images, and invalid point values',()=>{for(const mutate of [b=>b.rounds[0].categories[0].questions[1].id='ep19-1',b=>b.rounds[0].categories[0].questions[0].questionImage='javascript:alert(1)',b=>b.rounds[0].categories[0].questions[0].points=-10]){const b=structuredClone(board);mutate(b);assert.throws(()=>validateBoard(b));}});
+test('upgrade cropped built-in answers without changing custom images or completion',async()=>{
+ const {migrateAnswerImages}=await import('./dist/state.js');const b=structuredClone(board),qs=b.rounds[0].categories[0].questions;
+ qs[0].answerImage='assets/01-answer.jpg';qs[1].answerImage='https://example.com/custom.jpg';const done={'ep19-1':true};
+ assert.equal(migrateAnswerImages(b,board),true);assert.equal(qs[0].answerImage,'assets/01-answer-full.jpg');assert.equal(qs[1].answerImage,'https://example.com/custom.jpg');assert.deepEqual(done,{'ep19-1':true});assert.equal(migrateAnswerImages(b,board),false);
+});

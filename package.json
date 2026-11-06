@@ -1,0 +1,1 @@
+{"name":"quiz-night-board","private":true,"version":"1.0.0","type":"module","scripts":{"start":"node server.mjs","test":"node --test"},"engines":{"node":">=20"}}

@@ -1,0 +1,529 @@
+{
+  "version": 1,
+  "title": "Buzzing with KVizzing",
+  "subtitle": "Episode 19 · Bollywood & pop culture",
+  "rounds": [
+    {
+      "id": "round-1",
+      "name": "Round 1",
+      "categories": [
+        {
+          "id": "cat-0-0",
+          "name": "Minimalist posters",
+          "questions": [
+            {
+              "id": "ep19-1",
+              "points": 10,
+              "prompt": "Identify the film from this minimalist poster.",
+              "questionImage": "assets/01-question.jpg",
+              "answerImage": "assets/01-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=464s"
+            },
+            {
+              "id": "ep19-4",
+              "points": 20,
+              "prompt": "Identify the film from this minimalist poster.",
+              "questionImage": "assets/04-question.jpg",
+              "answerImage": "assets/04-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=612s"
+            },
+            {
+              "id": "ep19-5",
+              "points": 30,
+              "prompt": "Identify the film from this minimalist poster.",
+              "questionImage": "assets/05-question.jpg",
+              "answerImage": "assets/05-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=676s"
+            },
+            {
+              "id": "ep19-6",
+              "points": 40,
+              "prompt": "Identify the film from this minimalist poster.",
+              "questionImage": "assets/06-question.jpg",
+              "answerImage": "assets/06-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=710s"
+            },
+            {
+              "id": "ep19-7",
+              "points": 50,
+              "prompt": "Identify the film from this minimalist poster.",
+              "questionImage": "assets/07-question.jpg",
+              "answerImage": "assets/07-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=746s"
+            }
+          ]
+        },
+        {
+          "id": "cat-0-1",
+          "name": "Tailor Swift",
+          "questions": [
+            {
+              "id": "ep19-8",
+              "points": 10,
+              "prompt": "Identify the actress and film from these costume clues.",
+              "questionImage": "assets/08-question.jpg",
+              "answerImage": "assets/08-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=830s"
+            },
+            {
+              "id": "ep19-9",
+              "points": 20,
+              "prompt": "Identify the actress and film from these costume clues.",
+              "questionImage": "assets/09-question.jpg",
+              "answerImage": "assets/09-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=918s"
+            },
+            {
+              "id": "ep19-16",
+              "points": 30,
+              "prompt": "Identify the actress and film from these costume clues.",
+              "questionImage": "assets/16-question.jpg",
+              "answerImage": "assets/16-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1300s"
+            },
+            {
+              "id": "ep19-18",
+              "points": 40,
+              "prompt": "Identify the actress and film from these costume clues.",
+              "questionImage": "assets/18-question.jpg",
+              "answerImage": "assets/18-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1398s"
+            },
+            {
+              "id": "ep19-19",
+              "points": 50,
+              "prompt": "Identify the actress and film from these costume clues.",
+              "questionImage": "assets/19-question.jpg",
+              "answerImage": "assets/19-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1454s"
+            }
+          ]
+        },
+        {
+          "id": "cat-0-2",
+          "name": "Property Brothers",
+          "questions": [
+            {
+              "id": "ep19-2",
+              "points": 10,
+              "prompt": "Which TV show features this prop?",
+              "questionImage": "assets/02-question.jpg",
+              "answerImage": "assets/02-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=488s"
+            },
+            {
+              "id": "ep19-15",
+              "points": 20,
+              "prompt": "Which TV show features this prop?",
+              "questionImage": "assets/15-question.jpg",
+              "answerImage": "assets/15-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1214s"
+            },
+            {
+              "id": "ep19-21",
+              "points": 30,
+              "prompt": "Which TV show features this prop?",
+              "questionImage": "assets/21-question.jpg",
+              "answerImage": "assets/21-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1694s"
+            },
+            {
+              "id": "ep19-22",
+              "points": 40,
+              "prompt": "Which TV show features this prop?",
+              "questionImage": "assets/22-question.jpg",
+              "answerImage": "assets/22-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1764s"
+            },
+            {
+              "id": "ep19-23",
+              "points": 50,
+              "prompt": "Which TV show features this prop?",
+              "questionImage": "assets/23-question.jpg",
+              "answerImage": "assets/23-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1784s"
+            }
+          ]
+        },
+        {
+          "id": "cat-0-3",
+          "name": "Man’s best friend",
+          "questions": [
+            {
+              "id": "ep19-14",
+              "points": 10,
+              "prompt": "Name the animal and the film it appears in.",
+              "questionImage": "assets/14-question.jpg",
+              "answerImage": "assets/14-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1144s"
+            },
+            {
+              "id": "ep19-17",
+              "points": 20,
+              "prompt": "Name the animal and the film it appears in.",
+              "questionImage": "assets/17-question.jpg",
+              "answerImage": "assets/17-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1368s"
+            },
+            {
+              "id": "ep19-20",
+              "points": 30,
+              "prompt": "Name the animal and the film it appears in.",
+              "questionImage": "assets/20-question.jpg",
+              "answerImage": "assets/20-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1614s"
+            },
+            {
+              "id": "ep19-24",
+              "points": 40,
+              "prompt": "Name the animal and the film it appears in.",
+              "questionImage": "assets/24-question.jpg",
+              "answerImage": "assets/24-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1878s"
+            },
+            {
+              "id": "ep19-25",
+              "points": 50,
+              "prompt": "Name the animal and the film it appears in.",
+              "questionImage": "assets/25-question.jpg",
+              "answerImage": "assets/25-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1912s"
+            }
+          ]
+        },
+        {
+          "id": "cat-0-4",
+          "name": "Nach Baliye",
+          "questions": [
+            {
+              "id": "ep19-3",
+              "points": 10,
+              "prompt": "Which real-life couple appears in this film?",
+              "questionImage": "assets/03-question.jpg",
+              "answerImage": "assets/03-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=560s"
+            },
+            {
+              "id": "ep19-10",
+              "points": 20,
+              "prompt": "Which real-life couple appears in this film?",
+              "questionImage": "assets/10-question.jpg",
+              "answerImage": "assets/10-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=976s"
+            },
+            {
+              "id": "ep19-11",
+              "points": 30,
+              "prompt": "Which real-life couple appears in this film?",
+              "questionImage": "assets/11-question.jpg",
+              "answerImage": "assets/11-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1028s"
+            },
+            {
+              "id": "ep19-12",
+              "points": 40,
+              "prompt": "Which real-life couple appears in this film?",
+              "questionImage": "assets/12-question.jpg",
+              "answerImage": "assets/12-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1050s"
+            },
+            {
+              "id": "ep19-13",
+              "points": 50,
+              "prompt": "Which real-life couple appears in this film?",
+              "questionImage": "assets/13-question.jpg",
+              "answerImage": "assets/13-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=1104s"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "round-2",
+      "name": "Round 2",
+      "categories": [
+        {
+          "id": "cat-1-0",
+          "name": "MVPs",
+          "questions": [
+            {
+              "id": "ep19-50",
+              "points": 10,
+              "prompt": "Identify the singer of this music video.",
+              "questionImage": "assets/50-question.jpg",
+              "answerImage": "assets/50-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3414s"
+            },
+            {
+              "id": "ep19-32",
+              "points": 20,
+              "prompt": "Identify the singer of this music video.",
+              "questionImage": "assets/32-question.jpg",
+              "answerImage": "assets/32-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2482s"
+            },
+            {
+              "id": "ep19-34",
+              "points": 30,
+              "prompt": "Identify the singer of this music video.",
+              "questionImage": "assets/34-question.jpg",
+              "answerImage": "assets/34-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2568s"
+            },
+            {
+              "id": "ep19-37",
+              "points": 40,
+              "prompt": "Identify the singer of this music video.",
+              "questionImage": "assets/37-question.jpg",
+              "answerImage": "assets/37-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2714s"
+            },
+            {
+              "id": "ep19-43",
+              "points": 50,
+              "prompt": "Identify the singer of this music video.",
+              "questionImage": "assets/43-question.jpg",
+              "answerImage": "assets/43-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3130s"
+            }
+          ]
+        },
+        {
+          "id": "cat-1-1",
+          "name": "The Namesake",
+          "questions": [
+            {
+              "id": "ep19-28",
+              "points": 10,
+              "prompt": "Which famous screen name belongs to this birth name?",
+              "questionImage": "assets/28-question.jpg",
+              "answerImage": "assets/28-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2216s"
+            },
+            {
+              "id": "ep19-29",
+              "points": 20,
+              "prompt": "Which famous screen name belongs to this birth name?",
+              "questionImage": "assets/29-question.jpg",
+              "answerImage": "assets/29-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2294s"
+            },
+            {
+              "id": "ep19-30",
+              "points": 30,
+              "prompt": "Which famous screen name belongs to this birth name?",
+              "questionImage": "assets/30-question.jpg",
+              "answerImage": "assets/30-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2312s"
+            },
+            {
+              "id": "ep19-31",
+              "points": 40,
+              "prompt": "Which famous screen name belongs to this birth name?",
+              "questionImage": "assets/31-question.jpg",
+              "answerImage": "assets/31-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2374s"
+            },
+            {
+              "id": "ep19-36",
+              "points": 50,
+              "prompt": "Which famous screen name belongs to this birth name?",
+              "questionImage": "assets/36-question.jpg",
+              "answerImage": "assets/36-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2662s"
+            }
+          ]
+        },
+        {
+          "id": "cat-1-2",
+          "name": "Meth Gala",
+          "questions": [
+            {
+              "id": "ep19-27",
+              "points": 10,
+              "prompt": "Identify the person wearing this outfit.",
+              "questionImage": "assets/27-question.jpg",
+              "answerImage": "assets/27-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2194s"
+            },
+            {
+              "id": "ep19-33",
+              "points": 20,
+              "prompt": "Identify the person wearing this outfit.",
+              "questionImage": "assets/33-question.jpg",
+              "answerImage": "assets/33-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2532s"
+            },
+            {
+              "id": "ep19-44",
+              "points": 30,
+              "prompt": "Identify the person wearing this outfit.",
+              "questionImage": "assets/44-question.jpg",
+              "answerImage": "assets/44-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3152s"
+            },
+            {
+              "id": "ep19-45",
+              "points": 40,
+              "prompt": "Identify the person wearing this outfit.",
+              "questionImage": "assets/45-question.jpg",
+              "answerImage": "assets/45-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3212s"
+            },
+            {
+              "id": "ep19-46",
+              "points": 50,
+              "prompt": "Identify the person wearing this outfit.",
+              "questionImage": "assets/46-question.jpg",
+              "answerImage": "assets/46-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3242s"
+            }
+          ]
+        },
+        {
+          "id": "cat-1-3",
+          "name": "Uno Reverse",
+          "questions": [
+            {
+              "id": "ep19-35",
+              "points": 10,
+              "prompt": "Which Bollywood film inspired this English-language film, according to the quiz?",
+              "questionImage": "assets/35-question.jpg",
+              "answerImage": "assets/35-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2616s"
+            },
+            {
+              "id": "ep19-38",
+              "points": 20,
+              "prompt": "Which Bollywood film inspired this English-language film, according to the quiz?",
+              "questionImage": "assets/38-question.jpg",
+              "answerImage": "assets/38-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2848s"
+            },
+            {
+              "id": "ep19-39",
+              "points": 30,
+              "prompt": "Which Bollywood film inspired this English-language film, according to the quiz?",
+              "questionImage": "assets/39-question.jpg",
+              "answerImage": "assets/39-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2934s"
+            },
+            {
+              "id": "ep19-40",
+              "points": 40,
+              "prompt": "Which Bollywood film inspired this English-language film, according to the quiz?",
+              "questionImage": "assets/40-question.jpg",
+              "answerImage": "assets/40-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2978s"
+            },
+            {
+              "id": "ep19-47",
+              "points": 50,
+              "prompt": "Which Bollywood film inspired this English-language film, according to the quiz?",
+              "questionImage": "assets/47-question.jpg",
+              "answerImage": "assets/47-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3306s"
+            }
+          ]
+        },
+        {
+          "id": "cat-1-4",
+          "name": "Where’s the lie?",
+          "questions": [
+            {
+              "id": "ep19-49",
+              "points": 10,
+              "prompt": "Identify the film from this badly explained plot.",
+              "questionImage": "assets/49-question.jpg",
+              "answerImage": "assets/49-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3380s"
+            },
+            {
+              "id": "ep19-26",
+              "points": 20,
+              "prompt": "Identify the film from this badly explained plot.",
+              "questionImage": "assets/26-question.jpg",
+              "answerImage": "assets/26-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=2150s"
+            },
+            {
+              "id": "ep19-41",
+              "points": 30,
+              "prompt": "Identify the film from this badly explained plot.",
+              "questionImage": "assets/41-question.jpg",
+              "answerImage": "assets/41-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3036s"
+            },
+            {
+              "id": "ep19-42",
+              "points": 40,
+              "prompt": "Identify the film from this badly explained plot.",
+              "questionImage": "assets/42-question.jpg",
+              "answerImage": "assets/42-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3088s"
+            },
+            {
+              "id": "ep19-48",
+              "points": 50,
+              "prompt": "Identify the film from this badly explained plot.",
+              "questionImage": "assets/48-question.jpg",
+              "answerImage": "assets/48-answer-full.jpg",
+              "answer": "",
+              "source": "https://www.youtube.com/watch?v=C1bHN3fs62U&t=3344s"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
